@@ -6,6 +6,7 @@
     var upperCaseLetters = /[A-Z]/g;
     var numbers = /[0-9]/g;
     var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    let mgs = document.getElementById('para');
 
 
 function validateSignup(){
@@ -20,12 +21,14 @@ function validateSignup(){
         }
         else {
             alert("Name should at least be 2 letter word");
+            mgs.innerHTML = "Name should at least be 2 letter word"
             flag=false;
         }
         return flag;
     }
     function passVal(){
-        var p = document.getElementById('pass1').value,errors = [];
+        var p = document.getElementById('pass1').value;
+        let errors = [];
     if (p.length < 8) {
         errors.push("Your password must be at least 8 characters"); 
     }
@@ -37,10 +40,9 @@ function validateSignup(){
     }
     if (errors.length > 0) {
         alert(errors.join("\n"));
-        flag = false;
+        return false;
     }
-    flag = true;
-        return flag;
+    return true;
     }
 return flag;
 }
