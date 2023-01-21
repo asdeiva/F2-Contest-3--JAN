@@ -82,3 +82,9 @@ body {
     font-size: 1.1rem;
     padding: 15px;
   }
+  .red{
+    color: red;
+  }
+  .green{
+    color: green;
+  }
